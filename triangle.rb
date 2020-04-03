@@ -14,6 +14,14 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+  x, y, z = [a,b,c].sort
+
+  if a <= 0 || b <= 0 || c <= 0
+    raise TriangleError
+  elsif x + y <= z
+    raise TriangleError
+  end
+
   if a == b && b == c
     :equilateral
   elsif a == b || b == c || a == c
